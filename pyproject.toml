@@ -10,8 +10,8 @@ dependencies = [
     "pydantic>=2.0.0",
 ]
 
-[project.scripts]
-platzi-news = "platzi_news.main:main"
+#[project.scripts]
+#orchestrator = "orchestrator_x.main:main"
 
 [dependency-groups]
 dev = [
