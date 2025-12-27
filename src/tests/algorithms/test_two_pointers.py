@@ -15,7 +15,7 @@ def test_remove_duplicates_basic() -> None:
 
     # Verificaciones
     assert length == expected_length  # noqa: S101
-    # Verificamos solo los primeros 'length' elementos
+    # Verificamos solo los primeros 'length' elementos (Se ignora la basura)
     assert logs[:length] == expected_content  # noqa: S101
 
 
