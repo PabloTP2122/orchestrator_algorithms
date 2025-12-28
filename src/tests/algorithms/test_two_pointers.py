@@ -1,6 +1,11 @@
 """Tests para el algoritmo two_pointers."""
 
-from orchestrator.algorithms.two_pointers import remove_duplicates
+import timeit
+
+from orchestrator.algorithms.two_pointers import (
+    remove_duplicates,
+    remove_duplicates_pythonic,
+)
 
 
 def test_remove_duplicates_basic() -> None:
@@ -12,6 +17,14 @@ def test_remove_duplicates_basic() -> None:
 
     # Ejecución
     length = remove_duplicates(logs)
+
+    # Verificación de tiempos (Fines didacticos):
+
+    tiempo_two_pointers = timeit.timeit(lambda: remove_duplicates(logs), number=1)
+    tiempo_pythonic = timeit.timeit(lambda: remove_duplicates_pythonic(logs), number=1)
+
+    print(f"\nTiempo Two pointers (Más constante): {tiempo_two_pointers:.2e}")
+    print(f"Tiempo Pythonic (Varible por hash tables): {tiempo_pythonic:.2e}")
 
     # Verificaciones
     assert length == expected_length  # noqa: S101
